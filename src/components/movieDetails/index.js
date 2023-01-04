@@ -57,7 +57,7 @@ const MovieDetails = ( props) => {
         />
         <Chip label={`Released: ${movie.release_date}`} />
       </Paper>
-      {/* <Paper 
+      <Paper 
         component="ul" 
         sx={root}
       >
@@ -69,7 +69,7 @@ const MovieDetails = ( props) => {
             <Chip label={c.name} sx={chip} />
           </li>
         ))}
-      </Paper> */}
+      </Paper>
       <Fab
         color="secondary"
         variant="extended"
