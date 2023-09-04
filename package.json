@@ -1,0 +1,54 @@
+{
+  "name": "moviesapp",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.3.1",
+    "@mui/material": "^5.4.0",
+    "prop-types": "^15.7.2",
+    "react": "^18.0.1",
+    "react-dom": "^18.0.1",
+    "react-hook-form": "^7.34.2",
+    "react-query": "^3.13.0",
+    "react-router-dom": "6.3.0",
+    "react-scripts": "5.0.0"
+  },
+  "scripts": {
+    "storybook": "storybook dev -p 6006 -s public",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "build-storybook": "storybook build -s public"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@storybook/addon-actions": "^7.4.0",
+    "@storybook/addon-links": "^7.4.0",
+    "@storybook/node-logger": "^7.4.0",
+    "@storybook/preset-create-react-app": "^7.4.0",
+    "@storybook/react": "^7.4.0",
+    "@storybook/react-webpack5": "^7.4.0",
+    "html-webpack-plugin": "^5.5.0",
+    "storybook": "^7.4.0"
+  }
+}
