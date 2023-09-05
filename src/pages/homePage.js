@@ -37,7 +37,6 @@ const MovieListPage = (props) => {
     )
       .then((res) => res.json())
       .then((json) => {
-        console.log(json);
         return json.results;
       })
       .then((movies) => {
