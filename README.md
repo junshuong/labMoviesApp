@@ -3,9 +3,8 @@ Frontend labs + assignment
 
 ## Setup
 Create file ``` .env ``` and insert API key
-
-## Install and run 
-Install node modules
+ 
+### Install node modules
 > npm install
-Start server
+### Start server
 > npm start
