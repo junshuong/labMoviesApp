@@ -17,12 +17,11 @@ import Grid from "@mui/material/Grid";
 
 export default function MovieCard({ movie, action }) {
   const { favourites } = useContext(MoviesContext);
- 
-   if (favourites.find((id) => id === movie.id)) {
-     movie.favourite = true;
-   } else {
-     movie.favourite = false
-   }
+    if (favourites.find((id) => id === movie.id)) {
+      movie.favourite = true;
+    } else {
+      movie.favourite = false
+    }
 
   return (
     <Card sx={{ maxWidth: 345 }}>
