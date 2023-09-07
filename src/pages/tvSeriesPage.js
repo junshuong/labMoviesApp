@@ -1,36 +1,35 @@
-// import React from "react";
-// import { getMovies, getTVs } from "../api/tmdb-api"; // GET TV series 
-// import PageTemplate from '../components/templateMovieListPage'; // duplicate for TV series list
-// import { useQuery } from 'react-query';
-// import Spinner from '../components/spinner';
-// import AddToFavouritesIcon from '../components/cardIcons/addToFavourites'
+import React from "react";
+import { getTVs } from "../api/tmdb-api"; // add getUpcoming API hook
+import PageTemplate from '../components/templateMovieListPage';
+import { useQuery } from 'react-query';
+import Spinner from '../components/spinner';
+import AddToWatchListIcon from '../components/cardIcons/addToWatchList'
 
-// const TVSeriesPage = (props) => {
+const TVPage = (props) => {
+  const {  data, error, isLoading, isError }  = useQuery('tv', getTVs)
 
-//   const {  data, error, isLoading, isError }  = useQuery('discover', getMovies)
+  if (isLoading) {
+    return <Spinner />
+  }
 
-//   if (isLoading) {
-//     return <Spinner />
-//   }
+  if (isError) {
+    return <h1>{error.message}</h1>
+  }  
+  const tvs = data.results;
 
-//   if (isError) {
-//     return <h1>{error.message}</h1>
-//   }  
-//   const movies = data.results;
+  // Redundant, but necessary to avoid app crashing.
+  const watchlists = tvs.filter(t => t.watchlist)
+  localStorage.setItem('watchlists', JSON.stringify(watchlists))
+  
+  return (
+    <PageTemplate
+      title="TV Series"
+      tvs={tvs}
+      action={(tv) => {
+        return <AddToWatchListIcon tv={tv}/>
+      }}
+    />
+);
+};
 
-// //   Redundant, but necessary to avoid app crashing.
-//   const favourites = movies.filter(m => m.favourite)
-//   localStorage.setItem('favourites', JSON.stringify(favourites))
-
-//   return (
-//       <PageTemplate
-//         title="Discover TV series"
-//         movies={movies}
-//         action={(movie) => {
-//           return <AddToFavouritesIcon movie={movie} />
-//         }}
-//       />
-//   );
-// };
-
-// export default TVSeriesPage;
+export default TVPage;

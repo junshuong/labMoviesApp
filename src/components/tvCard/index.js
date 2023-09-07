@@ -21,7 +21,7 @@ export default function TVCard(props) {
         sx={{ height: 500 }}
         image={
           tv.poster_path
-            ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+            ? `https://image.tmdb.org/t/p/w500/${tv.poster_path}`
             : img
         }
       />
